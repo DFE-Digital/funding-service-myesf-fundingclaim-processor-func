@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Rahul Mehta (Capgemini) -->
+<xs:schema xmlns:fcr="urn:sfa:schemas:FCReconciliation" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="urn:sfa:schemas:FCReconciliation" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.00">
+	<xs:attributeGroup name="SchemaVersionAttribute">
+		<xs:attribute name="SchemaVersion" type="fcr:Decimal4point2" use="required" fixed="3.00">
+			<xs:annotation>
+				<xs:documentation>Version of the schema in use</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- ELEMENTS ELEMENTS ELEMENTS-->
+	<xs:element name="FCReconciliation">
+		<xs:annotation>
+			<xs:documentation>TO BE COMPLETED</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FCReconciliationAllAttrs" type="fcr:FCReconciliationAllAttrsCT"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="fcr:SchemaVersionAttribute"/>
+		</xs:complexType>
+	</xs:element>
+	<!-- COMPLEX TYPES COMPLEX TYPES COMPLEX TYPES -->
+	<xs:complexType name="FCReconciliationAllAttrsCT">
+		<xs:sequence>
+			<xs:element name="FCReconciliationPKeyAttrs" type="fcr:FCReconciliationPKeyAttrsCT"/>
+			<xs:element name="FCReconciliationNonPKeyAttrs" type="fcr:FCReconciliationNonPKeyAttrsCT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FCReconciliationPKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="Contractor" type="fcr:ContractorAllAttrsCT"/>
+			<xs:element name="Period" type="fcr:PeriodAllAttrsCT"/>
+			<xs:element name="ClaimVersionNumber" type="xs:int"/>
+			<xs:element name="ClaimType" type="fcr:ClaimTypeAllAttrsCT"/>
+			<xs:element name="AllocationGroup" type="fcr:AllocationGroupAllAttrsCT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FCReconciliationNonPKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="Status" type="fcr:ReconciliationStatusST">
+				<xs:annotation>
+					<xs:documentation>
+            A term used to describe the position of the funding claim reconciliation in its lifecycle
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StatusLastUpdatedDate" type="xs:date"/>
+			<xs:element name="AmountAttrs" type="fcr:AmountAttrsCT"/>
+			<xs:element name="ContractAllocation" type="fcr:ContractAllocationAllAttrsCT" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContractorAllAttrsCT">
+		<xs:sequence>
+			<xs:element name="ContractorPKeyAttrs" type="fcr:ContractorPKeyAttrsCT"/>
+			<xs:element name="ContractorNonPKeyAttrs" type="fcr:ContractorNonPKeyAttrsCT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContractorPKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="OrganisationIdentifier" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+            The Organisation Identifier of the Contractor (an entity that agrees to furnish certain number or quantity of goods, material, equipment, personnel, and/or services that meet or exceed stated requirements or specifications, at a mutually agreed upon price and within a specified timeframe to another independent entity called contractee)
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContractorNonPKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="UKPRN" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>
+            The UK Provider Reference Number of the Contractor
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LegalName" type="fcr:String0255ST">
+				<xs:annotation>
+					<xs:documentation>
+            The legal name of the Contractor as used on the Contract
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ClaimTypeAllAttrsCT">
+		<xs:sequence>
+			<xs:element name="ClaimTypePKeyAttrs" type="fcr:ClaimTypePKeyAttrsCT"/>
+			<xs:element name="ClaimTypeNonPKeyAttrs" type="fcr:ClaimTypeNonPKeyAttrsCT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ClaimTypePKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="ClaimTypeCode" type="fcr:String0020ST"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ClaimTypeNonPKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="ClaimTypeName" type="fcr:String0050ST"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AllocationGroupAllAttrsCT">
+		<xs:sequence>
+			<xs:element name="AllocationGroupPKeyAttrs" type="fcr:AllocationGroupPKeyAttrsCT"/>
+			<xs:element name="AllocationGroupNonPKeyAttrs" type="fcr:AllocationGroupNonPKeyAttrsCT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AllocationGroupPKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="AllocationGroupCode" type="fcr:String0050ST"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AllocationGroupNonPKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="AllocationGroupName" type="fcr:String0255ST"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FCReconciliationStatusCT">
+		<xs:sequence>
+			<xs:element name="status">
+				<xs:annotation>
+					<xs:documentation>
+            A term used to describe the position of the funding claim reconciliation in its lifecycle
+          </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Draft"/>
+						<xs:enumeration value="Published"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="StatusLastUpdatedDate" type="xs:date" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AmountAttrsCT">
+		<xs:sequence>
+			<xs:element name="PlannedValue" type="fcr:Decimal13point2ST" minOccurs="0" nillable="true"/>
+			<xs:element name="ClaimedValue" type="fcr:Decimal13point2ST" minOccurs="0" nillable="true"/>
+			<xs:element name="ProposedReconciliationValue" type="fcr:Decimal13point2ST" minOccurs="0" nillable="true"/>
+			<xs:element name="ReconciliationValue" type="fcr:Decimal13point2ST" minOccurs="0" nillable="true"/>
+			<xs:element name="CappedClaimedValue" type="fcr:Decimal13point2ST" minOccurs="0" nillable="true"/>
+			<xs:element name="AdjustedCappedClaimedValue" type="fcr:Decimal13point2ST" minOccurs="0" nillable="true"/>
+			<xs:element name="ClaimAdjustments" type="fcr:ClaimAdjustmentAttrsCT" minOccurs="0" nillable="true"/>
+			<xs:element name="EarningsBoostValue" type="fcr:Decimal13point2ST" minOccurs="0" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContractAllocationAllAttrsCT">
+		<xs:annotation>
+			<xs:documentation>
+        A list of contract allocations
+      </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>
+            An allocation within the Contract domain
+          </xs:documentation>
+			</xs:annotation>
+			<xs:element name="ContractAllocationPKeyAttrs" type="fcr:ContractAllocationPKeyAttrsCT"/>
+			<xs:element name="ContractAllocationNonPKeyAttrs" type="fcr:ContractAllocationNonPKeyAttrsCT"/>
+			<xs:element name="ContractAllocationDNAttrs" type="fcr:ContractAllocationDNAttrsCT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContractAllocationPKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="ContractAllocationNumber" type="fcr:String0020ST">
+				<xs:annotation>
+					<xs:documentation>
+                  The unique identifier of a Contract Allocation (along with Contract Allocation Version Number)
+                </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContractAllocationNonPKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="FundingstreamPeriodCode" type="fcr:String0020ST"/>
+			<xs:element name="AllocationStartDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+                  The date from which the Contract Allocation is valid.Although in most cases the start and end date will be defined in the Contract (Hierarchy Type = 'CONTRACT'), there remains the possibility that in some circumstances it will need to be recorded at this level.
+                </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllocationEndDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+                  The date after which the Contract Allocation is no longer valid
+                </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AmountAttrs" type="fcr:AmountAttrsCT"/>
+			<xs:element name="ContractDeliverables" type="fcr:ContractDeliverablesAllAttrsCT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContractAllocationDNAttrsCT">
+		<xs:sequence>
+			<xs:element name="ContractAttrs" type="fcr:ContractAllAttrsCT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContractDeliverablesAllAttrsCT">
+		<xs:annotation>
+			<xs:documentation>
+        Essentially an intersection between a Contract and Deliverables - so the Deliverables that apply to the Contract.
+      </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ContractDeliverable" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Deliverable" type="fcr:DeliverableAllAttrsCT"/>
+						<xs:element name="AmountAttrs" type="fcr:AmountAttrsCT"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeliverableAllAttrsCT">
+		<xs:annotation>
+			<xs:documentation>A reference list of each deliverable</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DeliverableCode" type="xs:int"/>
+			<xs:element name="DeliverableName" type="fcr:String0120ST"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContractAllAttrsCT">
+		<xs:sequence>
+			<xs:element name="ContractNumber" type="fcr:String0020ST">
+				<xs:annotation>
+					<xs:documentation>
+              The unique identifier of a Contract (along with Contract Version Number)
+            </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContractVersionNumber" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>
+              An identifier used to differentiate the different versions of a Contract.
+            </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContractSubVersionNumber" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>An identifier used to allow a Contract Version to be amended without incrementing the Contract Version Number, for example, when updates are made to draft contracts.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FundingTypeAllAttrs" type="fcr:FundingTypeAllAttrsCT" minOccurs="0"/>
+			<!--<xs:element name="PeriodAllAttrs" type="fcr:PeriodAllAttrsCT" minOccurs="0"/>-->
+			<xs:element name="ContractApprovalDate" type="xs:date" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FundingTypeAllAttrsCT">
+		<xs:annotation>
+			<xs:documentation>
+        A grouping of Funding Streams used to determine Contract related behaviour
+      </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FundingPKeyAttrs" type="fcr:FundingTypePKeyAttrsCT"/>
+			<xs:element name="FundingTypeNonPKeyAttrs" type="fcr:FundingTypeNonPKeyAttrsCT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FundingTypePKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="FundingTypeCode" type="fcr:String0050ST"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FundingTypeNonPKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="FundingTypeName" type="fcr:String0100ST"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PeriodAllAttrsCT">
+		<xs:sequence>
+			<xs:element name="PeriodTypePKeyAttrs" type="fcr:PeriodTypePKeyAttrsCT"/>
+			<xs:element name="PeriodTypeNonPKeyAttrs" type="fcr:PeriodTypeNonPKeyAttrsCT"/>
+			<xs:element name="Period" type="fcr:String0004ST"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PeriodTypePKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="PeriodTypeCode" type="fcr:PeriodTypeCodeST"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PeriodTypeNonPKeyAttrsCT">
+		<xs:sequence>
+			<xs:element name="PeriodTypeName" type="fcr:PeriodTypeNameST"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ClaimAdjustmentAttrsCT">
+		<xs:sequence>
+			<xs:element name="ClaimAdjustmentValue" type="fcr:Decimal13point2ST"/>
+			<xs:element name="ClaimAdjustmentReason" type="fcr:String0255ST"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- SIMPLE TYPES SIMPLE TYPES SIMPLE TYPES SIMPLE TYPES	-->
+	<xs:simpleType name="Decimal13point2ST">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="13"/>
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReconciliationStatusST">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Draft"/>
+			<xs:enumeration value="Published"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PeriodTypeCodeST">
+		<xs:annotation>
+			<xs:documentation>
+        A code used to describe a type of period of time
+      </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AY"/>
+			<xs:enumeration value="FY"/>
+			<xs:enumeration value="CY"/>
+			<xs:enumeration value="CM"/>
+			<xs:enumeration value="CQ"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PeriodTypeNameST">
+		<xs:annotation>
+			<xs:documentation>
+        A name used to describe a type of period of time
+      </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACADEMIC YEAR"/>
+			<xs:enumeration value="CALENDAR YEAR"/>
+			<xs:enumeration value="FINANCIAL YEAR"/>
+			<xs:enumeration value="CALENDAR MONTH"/>
+			<xs:enumeration value="CALENDAR QUARTER"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String0004ST">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String0255ST">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String0120ST">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="120"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String0100ST">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String0020ST">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String0010ST">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String0006ST">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String0008ST">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String0080ST">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="80"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String0050ST">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Decimal4point2">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="4"/>
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="String0030ST">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

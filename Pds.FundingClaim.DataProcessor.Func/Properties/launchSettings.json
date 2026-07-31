@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Pds.FundingClaim.DataProcessor.Func": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "containerRunArguments": "--init",
+      "httpPort": 33818,
+      "useSSL": false
+    }
+  }
+}

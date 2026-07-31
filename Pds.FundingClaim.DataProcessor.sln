@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pds.FundingClaim.DataProcessor.Func", "Pds.FundingClaim.DataProcessor.Func\Pds.FundingClaim.DataProcessor.Func.csproj", "{8120D05C-E072-4891-8E60-97748F2ECA72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pds.FundingClaim.DataProcessor.Func.Tests", "Pds.FundingClaim.DataProcessor.Func.Tests\Pds.FundingClaim.DataProcessor.Func.Tests.csproj", "{EBD2CF52-45F7-4ECA-8D26-FCC21C972C0F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pds.FundingClaim.DataProcessor.Services", "Pds.FundingClaim.DataProcessor.Services\Pds.FundingClaim.DataProcessor.Services.csproj", "{039FFBCE-47FD-44B2-BDE2-E05930A8C5E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pds.FundingClaim.DataProcessor.Services.Tests", "Pds.FundingClaim.DataProcessor.Services.Tests\Pds.FundingClaim.DataProcessor.Services.Tests.csproj", "{3A4FC21C-D5C9-4BF0-AC00-66D6391414E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pds.FundingClaim.CorporateSchema", "Pds.FundingClaim.DataProcessor.CorporateSchema\Pds.FundingClaim.CorporateSchema.csproj", "{1BA732D2-3BE5-4433-AE24-77D6569F6F4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8120D05C-E072-4891-8E60-97748F2ECA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8120D05C-E072-4891-8E60-97748F2ECA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8120D05C-E072-4891-8E60-97748F2ECA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8120D05C-E072-4891-8E60-97748F2ECA72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBD2CF52-45F7-4ECA-8D26-FCC21C972C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD2CF52-45F7-4ECA-8D26-FCC21C972C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD2CF52-45F7-4ECA-8D26-FCC21C972C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD2CF52-45F7-4ECA-8D26-FCC21C972C0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{039FFBCE-47FD-44B2-BDE2-E05930A8C5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039FFBCE-47FD-44B2-BDE2-E05930A8C5E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039FFBCE-47FD-44B2-BDE2-E05930A8C5E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039FFBCE-47FD-44B2-BDE2-E05930A8C5E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A4FC21C-D5C9-4BF0-AC00-66D6391414E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A4FC21C-D5C9-4BF0-AC00-66D6391414E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A4FC21C-D5C9-4BF0-AC00-66D6391414E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A4FC21C-D5C9-4BF0-AC00-66D6391414E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BA732D2-3BE5-4433-AE24-77D6569F6F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BA732D2-3BE5-4433-AE24-77D6569F6F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BA732D2-3BE5-4433-AE24-77D6569F6F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BA732D2-3BE5-4433-AE24-77D6569F6F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CBA4C21-C600-490F-8317-0F21FA3E5A02}
+	EndGlobalSection
+EndGlobal
