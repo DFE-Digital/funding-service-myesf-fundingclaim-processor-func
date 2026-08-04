@@ -3,9 +3,6 @@ using Pds.FundingClaim.DataProcessor.Services.Constants;
 using Pds.FundingClaim.DataProcessor.Services.Extensions;
 using Pds.FundingClaim.DataProcessor.Services.Interfaces;
 using Pds.FundingClaim.DataProcessor.Services.Models;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Pds.FundingClaim.DataProcessor.Services.Implementations
 {

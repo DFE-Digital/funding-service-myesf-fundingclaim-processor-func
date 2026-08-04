@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using CorporateFundingClaim = Pds.FundingClaim.CorporateSchema.FundingClaims.FundingClaim;
+﻿using CorporateFundingClaim = Pds.FundingClaim.CorporateSchema.FundingClaims.FundingClaim;
 
 namespace Pds.FundingClaim.DataProcessor.Services.Models
 {

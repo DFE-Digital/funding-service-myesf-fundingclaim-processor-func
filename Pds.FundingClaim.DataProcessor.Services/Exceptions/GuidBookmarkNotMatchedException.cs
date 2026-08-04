@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pds.FundingClaim.DataProcessor.Services.Exceptions
+﻿namespace Pds.FundingClaim.DataProcessor.Services.Exceptions
 {
     /// <summary>
     /// Thrown when a feed was read but an existing bookmark was not matched.

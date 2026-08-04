@@ -2,11 +2,7 @@
 using Pds.FundingClaim.DataProcessor.Services.Exceptions;
 using Pds.FundingClaim.DataProcessor.Services.Extensions;
 using Pds.FundingClaim.DataProcessor.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel.Syndication;
-using System.Threading.Tasks;
 
 namespace Pds.FundingClaim.DataProcessor.Services.Implementations
 {

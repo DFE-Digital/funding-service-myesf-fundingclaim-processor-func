@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace Pds.FundingClaim.DataProcessor.Services.Interfaces
+﻿namespace Pds.FundingClaim.DataProcessor.Services.Interfaces
 {
     /// <summary>
     /// Service to do reconciliation data related operations.

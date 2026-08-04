@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pds.FundingClaim.DataProcessor.Services.Models
+﻿namespace Pds.FundingClaim.DataProcessor.Services.Models
 {
     /// <summary>
     /// Defines a message detailing an exception that occurred during the process of the feed.

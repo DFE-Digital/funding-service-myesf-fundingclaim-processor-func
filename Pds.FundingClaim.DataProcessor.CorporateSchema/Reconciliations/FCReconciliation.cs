@@ -61,7 +61,7 @@ namespace Pds.FundingClaim.CorporateSchema.Reconciliations
             catch (Exception)
             {
             }
-            
+
             var xdoc = XDocument.Parse(rawXml);
 
             using (var stream = xdoc.CreateReader())

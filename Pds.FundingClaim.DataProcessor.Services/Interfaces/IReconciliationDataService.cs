@@ -1,6 +1,4 @@
 ﻿using Pds.FundingClaim.DataProcessor.Services.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Pds.FundingClaim.DataProcessor.Services.Interfaces
 {

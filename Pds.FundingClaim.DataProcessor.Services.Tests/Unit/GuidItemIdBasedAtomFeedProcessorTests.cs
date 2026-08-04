@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
 {
-      [TestClass]
-      public class GuidItemIdBasedAtomFeedProcessorTests : BaseAtomFeedProcessorTest
+    [TestClass]
+    public class GuidItemIdBasedAtomFeedProcessorTests : BaseAtomFeedProcessorTest
     {
         #region ReadAndProcessAfterMatch
 

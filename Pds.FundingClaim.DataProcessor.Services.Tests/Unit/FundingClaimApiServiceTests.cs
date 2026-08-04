@@ -322,11 +322,11 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
             var uri = $"{_settings.ReconciliationUri}SendFeedReadExceptionEmail";
 
             var message = new FeedReadExceptionMessage
-                                {
-                                    Bookmark = Guid.NewGuid(),
-                                    Type = FeedReadExceptionMessage.ExceptionType.BookmarkNotMatched,
-                                    Url = "http://url"
-                                };
+            {
+                Bookmark = Guid.NewGuid(),
+                Type = FeedReadExceptionMessage.ExceptionType.BookmarkNotMatched,
+                Url = "http://url"
+            };
             SetUpTests(uri, setUpPost: true, postObject: message);
 
             // Act

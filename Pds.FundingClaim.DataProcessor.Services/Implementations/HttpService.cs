@@ -150,8 +150,8 @@ namespace Pds.FundingClaim.DataProcessor.Services.Implementations
             }
             catch (Exception e)
             {
-               _logger.LogError($"Exception: Unable to connect to API. Uri: {url} Error message: {e.Message}. Content length: {contentLength}");
-               throw;
+                _logger.LogError($"Exception: Unable to connect to API. Uri: {url} Error message: {e.Message}. Content length: {contentLength}");
+                throw;
             }
         }
 

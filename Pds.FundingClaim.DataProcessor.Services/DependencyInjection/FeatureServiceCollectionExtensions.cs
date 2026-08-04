@@ -4,7 +4,6 @@ using Microsoft.Extensions.Options;
 using Pds.FundingClaim.DataProcessor.Services.Configurations;
 using Pds.FundingClaim.DataProcessor.Services.Implementations;
 using Pds.FundingClaim.DataProcessor.Services.Interfaces;
-using System.Net.Http;
 
 namespace Pds.FundingClaim.DataProcessor.Services.DependencyInjection
 {

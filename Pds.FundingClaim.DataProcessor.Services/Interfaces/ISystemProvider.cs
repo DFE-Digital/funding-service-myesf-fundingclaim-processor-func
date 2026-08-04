@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pds.FundingClaim.DataProcessor.Services.Interfaces
+﻿namespace Pds.FundingClaim.DataProcessor.Services.Interfaces
 {
     /// <summary>
     /// The datetime provider to help with datetime operations.

@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace Pds.FundingClaim.DataProcessor.Services.Interfaces
+﻿namespace Pds.FundingClaim.DataProcessor.Services.Interfaces
 {
     /// <summary>
     /// Authentication service.

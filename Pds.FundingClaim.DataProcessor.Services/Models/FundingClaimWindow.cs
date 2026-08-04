@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pds.FundingClaim.DataProcessor.Services.Models
+﻿namespace Pds.FundingClaim.DataProcessor.Services.Models
 {
     /// <summary>
     /// Represents a funding claim window.

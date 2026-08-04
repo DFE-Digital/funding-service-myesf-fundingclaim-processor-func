@@ -1,47 +1,36 @@
 {
-  "APPINSIGHTS_INSTRUMENTATIONKEY": "",
-  "AutowithdrawFundingClaimScheduleTriggerTime": "0 5,15,25,35,45,55 * * * *",
-  "AzureWebJobsStorage": "",
-  "DataCollectionApiEndpointSettings": {
-    "BaseUri": "",
-    "GetFundingClaimCollectionsDetailsEndpoint": "",
-    "GetFundingClaimsEndpoint": ""
-  },
-  "DataCollectionApiSettings": {
-    "Authority": "",
-    "ClientId": "",
-    "ClientSecret": "",
-    "Scope": "",
-    "TenantId": ""
-  },
-  "Environment": "",
-  "FCSApiEndpointSettings": {
-    "BaseUri": ""
-  },
-  "FCSApiSettings": {
-    "AppIdUri": "",
-    "Authority": "",
-    "ClientId": "",
-    "ClientSecret": "",
-    "TenantId": ""
-  },
-  "FUNCTIONS_EXTENSION_VERSION": "~4",
-  "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-  "FundingClaimApiSettings": {
-    "AppIdUri": "",
-    "Authority": "",
-    "ClientId": "",
-    "ClientSecret": "",
-    "TenantId": ""
-  },
-  "GetFundingClaimScheduleTriggerTime": "0 1,11,21,31,41,51 * * * *",
-  "InternalApiSettings": {
-    "BaseUri": ""
-  },
-  "PdsApplicationInsights": {
+  "IsEncrypted": false,
+  "Values": {
+    "AutowithdrawFundingClaimScheduleTriggerTime": "0 5,15,25,35,45,55 * * * *",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
+    "DataCollectionApiEndpointSettings:BaseUri": "",
+    "DataCollectionApiEndpointSettings:GetFundingClaimCollectionsDetailsEndpoint": "",
+    "DataCollectionApiEndpointSettings:GetFundingClaimsEndpoint": "",
+    "DataCollectionApiSettings:Authority": "",
+    "DataCollectionApiSettings:ClientId": "",
+    "DataCollectionApiSettings:ClientSecret": "",
+    "DataCollectionApiSettings:Scope": "",
+    "DataCollectionApiSettings:TenantId": "",
     "Environment": "",
-    "InstrumentationKey": ""
-  },
-  "ReconciliationFeedReaderScheduleTriggerTime": "0 7,17,27,37,47,57 * * * *",
-  "UpdateFundingClaimWindowScheduleTriggerTime": "0 0,10,20,30,40,50 * * * *"
+    "FCSApiEndpointSettings:BaseUri": "",
+    "FCSApiSettings:AppIdUri": "",
+    "FCSApiSettings:Authority": "",
+    "FCSApiSettings:ClientId": "",
+    "FCSApiSettings:ClientSecret": "",
+    "FCSApiSettings:TenantId": "",
+    "FUNCTIONS_EXTENSION_VERSION": "~4",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "FundingClaimApiSettings:AppIdUri": "",
+    "FundingClaimApiSettings:Authority": "",
+    "FundingClaimApiSettings:ClientId": "",
+    "FundingClaimApiSettings:ClientSecret": "",
+    "FundingClaimApiSettings:TenantId": "",
+    "GetFundingClaimScheduleTriggerTime": "0 1,11,21,31,41,51 * * * *",
+    "InternalApiSettings:BaseUri": "",
+    "PdsApplicationInsights:Environment": "",
+    "PdsApplicationInsights:InstrumentationKey": "",
+    "ReconciliationFeedReaderScheduleTriggerTime": "0 7,17,27,37,47,57 * * * *",
+    "UpdateFundingClaimWindowScheduleTriggerTime": "0 0,10,20,30,40,50 * * * *"
+  }
 }

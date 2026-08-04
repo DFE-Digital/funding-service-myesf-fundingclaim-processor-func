@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ServiceModel.Syndication;
-using System.Threading.Tasks;
+﻿using System.ServiceModel.Syndication;
 
 namespace Pds.FundingClaim.DataProcessor.Services.Interfaces
 {

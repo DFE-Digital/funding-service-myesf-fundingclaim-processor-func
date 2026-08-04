@@ -4,10 +4,7 @@ using Pds.FundingClaim.DataProcessor.Services.Configurations;
 using Pds.FundingClaim.DataProcessor.Services.Extensions;
 using Pds.FundingClaim.DataProcessor.Services.Interfaces;
 using Pds.FundingClaim.DataProcessor.Services.Models;
-using System;
-using System.Collections.Generic;
 using System.ServiceModel.Syndication;
-using System.Threading.Tasks;
 
 namespace Pds.FundingClaim.DataProcessor.Services.Implementations
 {

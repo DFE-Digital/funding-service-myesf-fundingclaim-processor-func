@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pds.FundingClaim.DataProcessor.Services.Extensions
+﻿namespace Pds.FundingClaim.DataProcessor.Services.Extensions
 {
     /// <summary>
     /// Extension class for string types.

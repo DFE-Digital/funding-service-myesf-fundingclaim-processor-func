@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Pds.FundingClaim.CorporateSchema.Reconciliations;
-using System;
 
 namespace Pds.FundingClaim.DataProcessor.Services.Models
 {

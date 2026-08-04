@@ -66,8 +66,8 @@ namespace Pds.FundingClaim.CorporateSchema.Reconciliations
         /// <remarks/>
         [XmlElement("claimadjustments", IsNullable = true)]
         public ClaimAdjustmentAttrs ClaimAdjustments { get; set; }
-		
-		 /// <remarks/>
+
+        /// <remarks/>
         [XmlElement("earningsboostvalue", IsNullable = true)]
         public decimal? EarningsBoostValue { get; set; }
     }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pds.FundingClaim.DataProcessor.Services.Exceptions
+﻿namespace Pds.FundingClaim.DataProcessor.Services.Exceptions
 {
     /// <summary>
     /// Base exception type for feed read custom exceptions.

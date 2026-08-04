@@ -21,63 +21,52 @@ For running the application locally, `local.settings.json` file need to be creat
 ## Application Settings (`local.settings.json`)
 ```json
 {
-  "APPINSIGHTS_INSTRUMENTATIONKEY": "",
-  "AutowithdrawFundingClaimScheduleTriggerTime": "0 5,15,25,35,45,55 * * * *",
-  "AzureWebJobsStorage": "",
-  "DataCollectionApiEndpointSettings": {
-    "BaseUri": "",
-    "GetFundingClaimCollectionsDetailsEndpoint": "",
-    "GetFundingClaimsEndpoint": ""
-  },
-  "DataCollectionApiSettings": {
-    "Authority": "",
-    "ClientId": "",
-    "ClientSecret": "",
-    "Scope": "",
-    "TenantId": ""
-  },
-  "Environment": "",
-  "FCSApiEndpointSettings": {
-    "BaseUri": ""
-  },
-  "FCSApiSettings": {
-    "AppIdUri": "",
-    "Authority": "",
-    "ClientId": "",
-    "ClientSecret": "",
-    "TenantId": ""
-  },
-  "FUNCTIONS_EXTENSION_VERSION": "~4",
-  "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-  "FundingClaimApiSettings": {
-    "AppIdUri": "",
-    "Authority": "",
-    "ClientId": "",
-    "ClientSecret": "",
-    "TenantId": ""
-  },
-  "GetFundingClaimScheduleTriggerTime": "0 1,11,21,31,41,51 * * * *",
-  "InternalApiSettings": {
-    "BaseUri": ""
-  },
-  "PdsApplicationInsights": {
+  "IsEncrypted": false,
+  "Values": {
+    "AutowithdrawFundingClaimScheduleTriggerTime": "0 5,15,25,35,45,55 * * * *",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
+    "DataCollectionApiEndpointSettings:BaseUri": "",
+    "DataCollectionApiEndpointSettings:GetFundingClaimCollectionsDetailsEndpoint": "",
+    "DataCollectionApiEndpointSettings:GetFundingClaimsEndpoint": "",
+    "DataCollectionApiSettings:Authority": "",
+    "DataCollectionApiSettings:ClientId": "",
+    "DataCollectionApiSettings:ClientSecret": "",
+    "DataCollectionApiSettings:Scope": "",
+    "DataCollectionApiSettings:TenantId": "",
     "Environment": "",
-    "InstrumentationKey": ""
-  },
-  "ReconciliationFeedReaderScheduleTriggerTime": "0 7,17,27,37,47,57 * * * *",
-  "UpdateFundingClaimWindowScheduleTriggerTime": "0 0,10,20,30,40,50 * * * *"
+    "FCSApiEndpointSettings:BaseUri": "",
+    "FCSApiSettings:AppIdUri": "",
+    "FCSApiSettings:Authority": "",
+    "FCSApiSettings:ClientId": "",
+    "FCSApiSettings:ClientSecret": "",
+    "FCSApiSettings:TenantId": "",
+    "FUNCTIONS_EXTENSION_VERSION": "~4",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "FundingClaimApiSettings:AppIdUri": "",
+    "FundingClaimApiSettings:Authority": "",
+    "FundingClaimApiSettings:ClientId": "",
+    "FundingClaimApiSettings:ClientSecret": "",
+    "FundingClaimApiSettings:TenantId": "",
+    "GetFundingClaimScheduleTriggerTime": "0 1,11,21,31,41,51 * * * *",
+    "InternalApiSettings:BaseUri": "",
+    "PdsApplicationInsights:Environment": "",
+    "PdsApplicationInsights:InstrumentationKey": "",
+    "ReconciliationFeedReaderScheduleTriggerTime": "0 7,17,27,37,47,57 * * * *",
+    "UpdateFundingClaimWindowScheduleTriggerTime": "0 0,10,20,30,40,50 * * * *"
+  }
 }
 ```
 ### Setting Details
 
-- **`APPINSIGHTS_INSTRUMENTATIONKEY`**  
-  The unique identifier used to connect and send telemetry data directly to Azure Application Insights.
-
 - **`AutowithdrawFundingClaimScheduleTriggerTime`**  
   The CRON expression determining how often the automatic withdrawal funding claim process triggers (configured for minutes ending in 5).
 
-- **`AzureWebJobsStorage`**  
-  The connection string for the Azure Storage account required by the Azure Functions host for internal state logging and key management.
+- **`AzureWebJobsStorage`**
+  The core application setting used by the Azure Functions and Azure WebJobs runtime to establish a connection to an Azure Storage account.
+
+- **`AzureWebJobsDashboard`**
+  The core application setting used by the Azure Functions and Azure WebJobs runtime to establish a connection to an Azure Jobs dashboard.
 
 - **`DataCollectionApiEndpointSettings:BaseUri`**  
   The primary base URL used to construct endpoints for communicating with the Data Collection API.
@@ -162,3 +151,14 @@ For running the application locally, `local.settings.json` file need to be creat
 
 - **`UpdateFundingClaimWindowScheduleTriggerTime`**  
   The CRON layout parameter defining the processing schedule that executes system checks to refresh funding claim visibility windows (configured for minutes ending in 0).
+
+## Build and Test
+
+To build and test locally, you can either use Visual Studio, Visual Studio Code or simply use dotnet CLI `dotnet build` and `dotnet test` more information in dotnet CLI can be found at <https://docs.microsoft.com/en-us/dotnet/core/tools/>.
+
+## Contribute
+
+To contribute,
+
+- If you are part of the team then create a branch for changes and then submit your changes for review by creating a pull request.
+- If you are external to the organisation then fork this repository and make necessary changes and then submit your changes for review by creating a pull request.
