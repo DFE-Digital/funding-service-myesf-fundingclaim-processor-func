@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Pds.FundingClaim.CorporateSchema.Reconciliations;
+﻿using Pds.FundingClaim.CorporateSchema.Reconciliations;
 
 namespace Pds.FundingClaim.DataProcessor.Services.Models
 {
@@ -8,11 +7,6 @@ namespace Pds.FundingClaim.DataProcessor.Services.Models
     /// </summary>
     public class FeedReconciliation
     {
-        private static readonly IMapper Mapper = new MapperConfiguration(cfg =>
-        {
-            cfg.CreateMap<FCReconciliation, FeedReconciliation>();
-        }).CreateMapper();
-
         /// <summary>
         /// Gets or sets the syndicate feed identifier.
         /// </summary>
@@ -31,18 +25,15 @@ namespace Pds.FundingClaim.DataProcessor.Services.Models
         /// <param name="fcReconciliation">The reconciliation for which the feed reconciliationToCopy is built.</param>
         /// <param name="feedId">The FCS unique identifier associated with the corporate reconciliation.</param>
         /// <returns>FeedReconciliation instance.</returns>
-        public static FeedReconciliation NewInstance(FCReconciliation fcReconciliation, Guid feedId)
+        public static FeedReconciliation NewInstance(
+            FCReconciliation fcReconciliation,
+            Guid feedId)
         {
-            return NewInstance(fcReconciliation, fcReconciliation, feedId);
-        }
-
-        private static FeedReconciliation NewInstance(FCReconciliation masterReconciliation, FCReconciliation reconciliationToCopy, Guid feedId)
-        {
-            var feedReconciliation = Mapper.Map<FCReconciliation, FeedReconciliation>(reconciliationToCopy);
-            feedReconciliation.FeedId = feedId;
-            feedReconciliation.Reconciliation = masterReconciliation;
-
-            return feedReconciliation;
+            return new FeedReconciliation
+            {
+                FeedId = feedId,
+                Reconciliation = fcReconciliation
+            };
         }
 
         #endregion
