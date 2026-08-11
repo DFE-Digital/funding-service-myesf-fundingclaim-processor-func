@@ -9,39 +9,85 @@ namespace Pds.FundingClaim.DataProcessor.Func.Tests.Models
     public class FeedReconciliationTests
     {
         [TestMethod]
-        public void NewInstance_Should_Return_FeedReconciliation_With_Expected_Values()
+        public void NewInstance_Should_Return_FeedReconciliation_Instance()
         {
             // Arrange
-            var fcReconciliation = new FCReconciliation();
-            var feedId = Guid.NewGuid();
+            var reconciliation = new FCReconciliation();
 
             // Act
             var result = FeedReconciliation.NewInstance(
-                fcReconciliation,
-                feedId);
+                reconciliation,
+                Guid.NewGuid());
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(feedId, result.FeedId);
-            Assert.AreSame(fcReconciliation, result.Reconciliation);
+            Assert.IsInstanceOfType(result, typeof(FeedReconciliation));
         }
 
         [TestMethod]
-        public void NewInstance_When_Reconciliation_Is_Null_Should_Set_Reconciliation_To_Null()
+        public void NewInstance_Should_Set_FeedId()
         {
             // Arrange
-            FCReconciliation fcReconciliation = null;
+            var reconciliation = new FCReconciliation();
             var feedId = Guid.NewGuid();
 
             // Act
             var result = FeedReconciliation.NewInstance(
-                fcReconciliation,
+                reconciliation,
                 feedId);
+
+            // Assert
+            Assert.AreEqual(feedId, result.FeedId);
+        }
+
+        [TestMethod]
+        public void NewInstance_Should_Set_Reconciliation()
+        {
+            // Arrange
+            var reconciliation = new FCReconciliation();
+
+            // Act
+            var result = FeedReconciliation.NewInstance(
+                reconciliation,
+                Guid.NewGuid());
+
+            // Assert
+            Assert.AreSame(reconciliation, result.Reconciliation);
+        }
+
+        [TestMethod]
+        public void NewInstance_When_Reconciliation_Is_Null_Should_Return_Object()
+        {
+            // Arrange
+            var feedId = Guid.NewGuid();
+
+            // Act
+            var result = FeedReconciliation.NewInstance(null, feedId);
 
             // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual(feedId, result.FeedId);
             Assert.IsNull(result.Reconciliation);
+        }
+
+        [TestMethod]
+        public void NewInstance_Should_Create_New_Instance_Each_Time()
+        {
+            // Arrange
+            var reconciliation = new FCReconciliation();
+            var feedId = Guid.NewGuid();
+
+            // Act
+            var result1 = FeedReconciliation.NewInstance(
+                reconciliation,
+                feedId);
+
+            var result2 = FeedReconciliation.NewInstance(
+                reconciliation,
+                feedId);
+
+            // Assert
+            Assert.AreNotSame(result1, result2);
         }
     }
 }
