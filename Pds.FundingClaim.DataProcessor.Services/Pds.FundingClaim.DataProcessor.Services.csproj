@@ -15,7 +15,6 @@
     <None Remove="Pds.FundingClaim.DataProcessor.Services.csproj.transform" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
     <PackageReference Include="Microsoft.Identity.Client" Version="4.77.1" />
 	<PackageReference Include="Microsoft.Net.Http.Headers" Version="8.0.20" />
