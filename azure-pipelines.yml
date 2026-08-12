@@ -65,9 +65,7 @@ stages:
               echo 'Must fix security vulnerabilities found on the log output.'
               exit 1
           else
-              # echo 'No critical or high severity vulnerabilities found.'
               echo 'No critical or high severity vulnerabilities found.'
-              # exit 0      # Passes the job if no critical/high vulnerabilities are found
               exit 0
           fi
 
