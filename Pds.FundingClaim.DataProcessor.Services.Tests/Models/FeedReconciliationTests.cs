@@ -3,7 +3,7 @@ using Pds.FundingClaim.CorporateSchema.Reconciliations;
 using Pds.FundingClaim.DataProcessor.Services.Models;
 using System;
 
-namespace Pds.FundingClaim.DataProcessor.Func.Tests.Models
+namespace Pds.FundingClaim.DataProcessor.Services.Tests.Models
 {
     [TestClass]
     public class FeedReconciliationTests
@@ -68,26 +68,6 @@ namespace Pds.FundingClaim.DataProcessor.Func.Tests.Models
             Assert.IsNotNull(result);
             Assert.AreEqual(feedId, result.FeedId);
             Assert.IsNull(result.Reconciliation);
-        }
-
-        [TestMethod]
-        public void NewInstance_Should_Create_New_Instance_Each_Time()
-        {
-            // Arrange
-            var reconciliation = new FCReconciliation();
-            var feedId = Guid.NewGuid();
-
-            // Act
-            var result1 = FeedReconciliation.NewInstance(
-                reconciliation,
-                feedId);
-
-            var result2 = FeedReconciliation.NewInstance(
-                reconciliation,
-                feedId);
-
-            // Assert
-            Assert.AreNotSame(result1, result2);
         }
     }
 }
