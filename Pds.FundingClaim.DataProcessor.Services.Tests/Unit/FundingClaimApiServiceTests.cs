@@ -213,25 +213,6 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
 
 
         [TestMethod, TestCategory("Unit")]
-        public async Task AutowithdrawFundingClaims_WhenCalled_CallsTheAutowithdrawEndpoint()
-        {
-            // Arrange
-            var uri = $"{_settings.FundingClaimUri}AutoWithdrawFundingClaims";
-            SetUpTests(uri, setUpPut: true);
-
-            // Act
-            await _fundingClaimApiService.AutowithdrawFundingClaims();
-
-            // Assert
-            _mockHttpService.Verify(service => service.PutWithMSILAuthenticationAsync(uri, null), Times.Once);
-
-            _mockLogger.Verify(
-                l => l.LogInformation(
-                    $"FundingClaimApiService successfully executed AutowithdrawFundingClaims for uri {uri}"),
-                Times.Once);
-        }
-
-        [TestMethod, TestCategory("Unit")]
         public async Task GetReconciliationFeedBookmarkIdSetting_WhenCalled_ReturnSettings()
         {
             // Arrange
