@@ -49,7 +49,7 @@ namespace Pds.FundingClaim.DataProcessor.Services.Implementations
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<CorporateFundingClaim>> GetFundingClaim(DateTime sinceDateTime, bool requireSignature)
+        public async Task<IEnumerable<CorporateFundingClaim>> GetFundingClaim(DateTime sinceDateTime, bool requireSignature = false)
         {
             var parameters = new NameValueCollection
             {

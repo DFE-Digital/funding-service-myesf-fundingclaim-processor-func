@@ -23,7 +23,6 @@ For running the application locally, `local.settings.json` file need to be creat
 {
   "IsEncrypted": false,
   "Values": {
-    "AutowithdrawFundingClaimScheduleTriggerTime": "0 5,15,25,35,45,55 * * * *",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
     "DataCollectionApiEndpointSettings:BaseUri": "",
