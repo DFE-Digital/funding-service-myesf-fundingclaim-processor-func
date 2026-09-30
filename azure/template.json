@@ -172,10 +172,6 @@
                                 "value": "0 0,10,20,30,40,50 * * * *"
                             },
                             {
-                                "name": "AutowithdrawFundingClaimScheduleTriggerTime",
-                                "value": "0 5,15,25,35,45,55 * * * *"
-                            },
-                            {
                                 "name": "InternalApiSettings:BaseUri",
                                 "value": "[parameters('fundingClaimDataApiUrl')]"
                             },

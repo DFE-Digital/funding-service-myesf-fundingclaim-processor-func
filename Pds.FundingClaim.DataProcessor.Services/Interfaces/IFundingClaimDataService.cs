@@ -20,6 +20,6 @@ namespace Pds.FundingClaim.DataProcessor.Services.Interfaces
         /// <param name="sinceDateTime">The time after which the funding claim submissions are to be retrieved.</param>
         /// <param name="requireSignature">Whether the funding claims to be retrieved requires to be signed or not.</param>
         /// <returns>The enumeration of funding claims matching the filter.</returns>
-        Task<IEnumerable<CorporateFundingClaim>> GetFundingClaim(DateTime sinceDateTime, bool requireSignature);
+        Task<IEnumerable<CorporateFundingClaim>> GetFundingClaim(DateTime sinceDateTime, bool requireSignature = false);
     }
 }

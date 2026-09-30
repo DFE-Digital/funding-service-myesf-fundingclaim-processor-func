@@ -22,11 +22,5 @@
         /// </summary>
         /// <returns>The asynchronous Task.</returns>
         Task GetFundingClaims();
-
-        /// <summary>
-        /// Calls Funding claim internal api service to autowithdraw the funding claims that have passed the signature close date.
-        /// </summary>
-        /// <returns>The asynchronous Task.</returns>
-        Task AutowithdrawFundingClaims();
     }
 }

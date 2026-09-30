@@ -110,16 +110,6 @@ namespace Pds.FundingClaim.DataProcessor.Services.Implementations
         }
 
         /// <inheritdoc/>
-        public async Task AutowithdrawFundingClaims()
-        {
-            var uri = $"{_apiSettings.FundingClaimUri}AutoWithdrawFundingClaims";
-            await _httpService.PutWithMSILAuthenticationAsync(uri);
-
-            _logger.LogInformation(
-                $"FundingClaimApiService successfully executed AutowithdrawFundingClaims for uri {uri}");
-        }
-
-        /// <inheritdoc/>
         public async Task<string> GetReconciliationFeedBookmarkIdSetting()
         {
             var uri = $"{_apiSettings.ReconciliationUri}GetReconciliationFeedBookmarkIdSetting";

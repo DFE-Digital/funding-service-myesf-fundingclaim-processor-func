@@ -88,14 +88,6 @@ namespace Pds.FundingClaim.DataProcessor.Services.Implementations
             }
         }
 
-        /// <inheritdoc/>
-        public async Task AutowithdrawFundingClaims()
-        {
-            await _fundingClaimApiService.AutowithdrawFundingClaims();
-
-            _logger.LogInformation("FundingClaimService successfully executed AutowithdrawFundingClaims.");
-        }
-
         /// <summary>
         /// Checks if the funding claim polling setting is set to true.
         /// </summary>

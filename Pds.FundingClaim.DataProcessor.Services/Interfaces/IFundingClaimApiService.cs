@@ -47,12 +47,6 @@ namespace Pds.FundingClaim.DataProcessor.Services.Interfaces
         Task UpdateFundingClaims(CreateFundingClaimsApiRequest fundingClaimsRequest);
 
         /// <summary>
-        /// Calls Funding claim internal api to autowithdraw the funding claims that have passed the signature close date.
-        /// </summary>
-        /// <returns>The asynchronous Task.</returns>
-        Task AutowithdrawFundingClaims();
-
-        /// <summary>
         /// Gets the reconciliation feed bookmark id setting.
         /// </summary>
         /// <returns>The reconciliation feed bookmark id setting.</returns>

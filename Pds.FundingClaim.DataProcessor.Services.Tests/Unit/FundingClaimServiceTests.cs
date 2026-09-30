@@ -427,31 +427,5 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
         }
 
         #endregion GetFundingClaims Tests
-
-
-        [TestMethod, TestCategory("Unit")]
-        public async Task AutowithdrawFundingClaims_WhenCalled_CallsApiServiceToAutowithdraw()
-        {
-            // Arrange
-            var mockFundingClaimApiService = new Mock<IFundingClaimApiService>();
-
-            mockFundingClaimApiService
-                .Setup(service => service.AutowithdrawFundingClaims())
-                .Verifiable();
-
-            var mockLogger = new Mock<ILoggerAdapter<FundingClaimService>>();
-
-            var fundingClaimService = new FundingClaimService(mockFundingClaimApiService.Object, null, mockLogger.Object);
-
-            // Act
-            await fundingClaimService.AutowithdrawFundingClaims();
-
-            // Assert
-            mockFundingClaimApiService.Verify();
-            mockLogger.Verify(
-                l => l.LogInformation(
-                        "FundingClaimService successfully executed AutowithdrawFundingClaims."),
-                Times.Once);
-        }
     }
 }
