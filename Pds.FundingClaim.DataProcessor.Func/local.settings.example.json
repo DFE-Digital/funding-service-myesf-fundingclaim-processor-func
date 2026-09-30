@@ -1,7 +1,6 @@
 {
   "IsEncrypted": false,
-  "Values": {
-    "AutowithdrawFundingClaimScheduleTriggerTime": "0 5,15,25,35,45,55 * * * *",
+  "Values": {    
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
     "DataCollectionApiEndpointSettings:BaseUri": "",
