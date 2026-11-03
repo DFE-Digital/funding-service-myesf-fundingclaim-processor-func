@@ -202,7 +202,6 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
             AssertItemsReturnedFromFeed(actual);
         }
 
-        [ExpectedException(typeof(EmptyPageOnFeedException))]
         [TestMethod, TestCategory("Unit")]
         public async Task ReadAndProcessAfterMatch_3Pages_Page0Empty()
         {
@@ -210,15 +209,17 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
             Action<string> afterEachPageLoad = lastReadUrl => { };
             var atomFeedProcessor = GetAtomFeedProcessor(afterEachPageLoad, page0Empty: true);
 
-            // Act
-            await atomFeedProcessor.ReadAndProcessAfterMatch(
-                "http://page2/",
-                Guid.Parse("00000000-0000-0000-0000-000000000000"),
-                item => item,
-                afterEachPageLoad);
+            // Act and Assert
+            await Assert.ThrowsExactlyAsync<EmptyPageOnFeedException>(async () =>
+            {
+                await atomFeedProcessor.ReadAndProcessAfterMatch(
+               "http://page2/",
+               Guid.Parse("00000000-0000-0000-0000-000000000000"),
+               item => item,
+               afterEachPageLoad);
+            });
         }
 
-        [ExpectedException(typeof(EmptyPageOnFeedException))]
         [TestMethod, TestCategory("Unit")]
         public async Task ReadAndProcessAfterMatch_3Pages_Page1Empty()
         {
@@ -226,15 +227,17 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
             Action<string> afterEachPageLoad = lastReadUrl => { };
             var atomFeedProcessor = GetAtomFeedProcessor(afterEachPageLoad, page1Empty: true);
 
-            // Act
-            await atomFeedProcessor.ReadAndProcessAfterMatch(
+            // Act and Assert
+            await Assert.ThrowsExactlyAsync<EmptyPageOnFeedException>(async () =>
+            {
+                await atomFeedProcessor.ReadAndProcessAfterMatch(
                 "http://page2/",
                 Guid.Parse("00000000-0000-0000-0000-000000000000"),
                 item => item,
                 afterEachPageLoad);
+            });
         }
 
-        [ExpectedException(typeof(EmptyPageOnFeedException))]
         [TestMethod, TestCategory("Unit")]
         public async Task ReadAndProcessAfterMatch_3Pages_Page2Empty()
         {
@@ -242,15 +245,17 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
             Action<string> afterEachPageLoad = lastReadUrl => { };
             var atomFeedProcessor = GetAtomFeedProcessor(afterEachPageLoad, page2Empty: true);
 
-            // Act
-            await atomFeedProcessor.ReadAndProcessAfterMatch(
-                "http://page2/",
-                Guid.Parse("00000000-0000-0000-0000-000000000000"),
-                item => item,
-                afterEachPageLoad);
+            // Act and Assert
+            await Assert.ThrowsExactlyAsync<EmptyPageOnFeedException>(async () =>
+            {
+                await atomFeedProcessor.ReadAndProcessAfterMatch(
+                 "http://page2/",
+                 Guid.Parse("00000000-0000-0000-0000-000000000000"),
+                 item => item,
+                 afterEachPageLoad);
+            });
         }
 
-        [ExpectedException(typeof(GuidBookmarkNotMatchedException))]
         [TestMethod, TestCategory("Unit")]
         public async Task ReadAndProcessAfterMatch_3Pages_BookmarkNotMatched()
         {
@@ -258,16 +263,17 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
             Action<string> afterEachPageLoad = lastReadUrl => { };
             var atomFeedProcessor = GetAtomFeedProcessor(afterEachPageLoad);
 
-            // Act
-            await atomFeedProcessor.ReadAndProcessAfterMatch(
+            // Act and Assert
+            await Assert.ThrowsExactlyAsync<GuidBookmarkNotMatchedException>(async () =>
+            {
+                await atomFeedProcessor.ReadAndProcessAfterMatch(
                 "http://page2/",
                 Guid.NewGuid(),
                 item => item,
                 afterEachPageLoad);
+            });
         }
 
-
-        [ExpectedException(typeof(GuidBookmarkNotMatchedException))]
         [TestMethod, TestCategory("Unit")]
         public async Task ReadAndProcessAfterMatch_1Page_NoItems_BadBookmark()
         {
@@ -280,15 +286,17 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
 
             var atomFeedProcessor = new GuidItemIdBasedAtomFeedProcessor(mockHttpService.Object, logger.Object);
 
-            // Act
-            var actual = await atomFeedProcessor.ReadAndProcessAfterMatch(
+            // Act and Assert
+            await Assert.ThrowsExactlyAsync<GuidBookmarkNotMatchedException>(async () =>
+            {
+                var actual = await atomFeedProcessor.ReadAndProcessAfterMatch(
                 "http://page0/",
                 Guid.NewGuid(),
                 item => item,
                 afterEachPageLoad);
 
-            // Assert
-            AssertItemsReturnedFromFeed(actual);
+                AssertItemsReturnedFromFeed(actual);
+            });
         }
 
         #endregion
