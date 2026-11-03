@@ -31,7 +31,7 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
             var errorMessage = $"The bookmark [{_bookmarkId}] was not matched and we have reached the beginning of the feed.";
 
             // Assert
-            _ = Assert.ThrowsExceptionAsync<BaseFeedReadException>(async () => await _service.ReadAndProcessReconciliationFeed());
+            _ = Assert.ThrowsAsync<BaseFeedReadException>(async () => await _service.ReadAndProcessReconciliationFeed());
 
             _mockFundingClaimApiService.Verify(service => service.GetReconciliationFeedBookmarkIdSetting(), Times.Once);
 
@@ -52,7 +52,7 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Unit
             var errorMessage = $"An empty page was found in the ATOM feed at page [{_url}].";
 
             // Assert
-            _ = Assert.ThrowsExceptionAsync<EmptyPageOnFeedException>(async () => await _service.ReadAndProcessReconciliationFeed());
+            _ = Assert.ThrowsAsync<EmptyPageOnFeedException>(async () => await _service.ReadAndProcessReconciliationFeed());
 
             _mockFundingClaimApiService.Verify(service => service.GetReconciliationFeedBookmarkIdSetting(), Times.Once);
 
