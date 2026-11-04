@@ -144,11 +144,10 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Extensions
         #region LowerCaseAllElementNames
 
         [TestMethod, TestCategory("Unit")]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void LowerCaseAllElementNames_NullPassed()
         {
-            // Act
-            ServiceXDocumentExtensions.LowerCaseAllElementNames(null);
+            // Act and Assert
+            Assert.Throws<ArgumentNullException>(() => ServiceXDocumentExtensions.LowerCaseAllElementNames(null));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -171,11 +170,10 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Extensions
         #region LowerCaseAllAttributeNames
 
         [TestMethod, TestCategory("Unit")]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void LowerCaseAllAttributeNames_NullPassed()
         {
-            // Act
-            ServiceXDocumentExtensions.LowerCaseAllAttributeNames(null);
+            // Act and Assert
+            Assert.Throws<ArgumentNullException>(() => ServiceXDocumentExtensions.LowerCaseAllAttributeNames(null));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -199,11 +197,10 @@ namespace Pds.FundingClaim.DataProcessor.Services.Tests.Extensions
         #region LowerCaseAllElementAndAttributeNames
 
         [TestMethod, TestCategory("Unit")]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void LowerCaseAllElementAndAttributeNames_NullPassed()
         {
-            // Act
-            ServiceXDocumentExtensions.LowerCaseAllElementAndAttributeNames(null);
+            // Act and Assert
+            Assert.Throws<ArgumentNullException>(() => ServiceXDocumentExtensions.LowerCaseAllElementAndAttributeNames(null));
         }
 
         [TestMethod, TestCategory("Unit")]
